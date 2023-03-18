@@ -67,8 +67,8 @@ module.exports = (env, argv) => {
       }),
       // Skip the part where we would make a html template
       new HtmlWebpackPlugin({
-        template: 'index.html',
-        favicon: path.resolve(__dirname, 'client/assets/favicon-32x32.png'),
+        template: 'client/public/index.html',
+        // favicon: path.resolve(__dirname, 'client/assets/favicon-32x32.png'),
       }),
       ...additionalPlugins,
     ],

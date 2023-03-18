@@ -1,13 +1,11 @@
-const express = require('express')
-const routes = require('@util/routes')
-const errorMiddleware = require('@middleware/errorMiddleware')
+const http = require("http");
+require("dotenv").config();
+const app = require("./app"); // the actual Express application
+const config = require("./utils/config");
+const logger = require("./utils/logger");
 
-const app = express()
+const server = http.createServer(app);
 
-app.use(express.json())
-
-app.use(routes)
-
-app.use(errorMiddleware)
-
-module.exports = app
+server.listen(config.PORT, () => {
+  logger.info(`Server running on port ${config.PORT}`);
+});
