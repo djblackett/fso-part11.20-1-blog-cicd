@@ -2,7 +2,7 @@
 module.exports = {
   "env": {
     "browser": true,
-    "es6": true,
+    "es2021": true,
     "jest/globals": true,
     "cypress/globals": true
   },
