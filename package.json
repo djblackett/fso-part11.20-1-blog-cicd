@@ -7,6 +7,7 @@
     "start:server:dev": "cd server && node index.js",
     "start:server:prod": "cd server && cross-env NODE_ENV=production node index.js",
     "start:server:test": "cd server && cross-env NODE_ENV=test nodemon index.js",
+    "start:server:ci": "cd server && cross-env NODE_ENV=test node index.js",
     "start:fullstack:dev": "wait-on http://localhost:3003 && npm run start:frontend & npx kill-port 3003 && cd server && cross-env NODE_ENV=development nodemon index.js",
     "start:fullstack:prod": "wait-on http://localhost:3003 && npm run start:frontend & npm run start:server:prod",
     "clean": "rm dist/bundle.js",
