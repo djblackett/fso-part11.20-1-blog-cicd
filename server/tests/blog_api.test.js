@@ -57,6 +57,7 @@ beforeEach(async () => {
   // save all blogs to test DB
   const blogObjects = userAdded.map(blog => new Blog(blog));
   const promiseArray = blogObjects.map(blog => blog.save());
+  // eslint-disable-next-line no-undef
   await Promise.all(promiseArray);
 
   const userForToken1 = {

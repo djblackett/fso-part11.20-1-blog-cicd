@@ -33,6 +33,7 @@ beforeEach(async () => {
 
   const userObjects = usersWithHash.map(user => new User(user));
   const promiseArray = userObjects.map(user => user.save());
+  // eslint-disable-next-line no-undef
   await Promise.all(promiseArray);
 }, 100000);
 

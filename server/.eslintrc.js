@@ -13,7 +13,7 @@ module.exports = {
     "ecmaVersion": "latest"
   },
   "plugins": [
-    "react"
+
   ],
   "rules": {
     "indent": [
