@@ -6,6 +6,8 @@ const User = require("../models/user");
 const api = supertest.agent(app);
 require("jest-expect-message");
 const jwt = require("jsonwebtoken");
+const config = require("../utils/config");
+const logger = require("../utils/logger");
 
 
 const initialBlogs = [
@@ -41,6 +43,13 @@ let token1 = "";
 let token2 = "";
 
 beforeEach(async () => {
+  mongoose.connect(config.MONGODB_URI)
+      .then(() => {
+        logger.info("connected to MongoDB");
+      })
+      .catch((error) => {
+        logger.error("error connecting to MongoDB:", error.message);
+      });
 
   await Blog.deleteMany({});
   await User.deleteMany({});
