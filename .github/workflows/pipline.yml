@@ -23,7 +23,7 @@ jobs:
       - name: test frontend
         run: npm run test:frontend
       - name: test:backend
-        run: npm run start:server:ci & wait-on http://localhost:3003 && npm run test:backend
+        run: npm run test:ci
       - name: e2e tests
         uses: cypress-io/github-action@v4
         with:
