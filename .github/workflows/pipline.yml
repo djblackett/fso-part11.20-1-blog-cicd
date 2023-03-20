@@ -20,13 +20,15 @@ jobs:
         run: npm install
       - name: lint
         run: npm run eslint
-      - name: test
-        run: npm run test
+      - name: test frontend
+        run: npm run test:frontend
+      - name: test:backend
+        run: npm run test:backend
       - name: e2e tests
         uses: cypress-io/github-action@v4
         with:
-          build: npm run build
-          start: npm run start:server
+          build: npm run build:prod
+          start: npm run start:server:test
           wait-on: http://localhost:3003
 
   flyio_deploy:
