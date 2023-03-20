@@ -1,2 +1,2 @@
-cypress.config.js
+../cypress.config.js
 jest.config.js
