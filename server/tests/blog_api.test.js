@@ -160,7 +160,7 @@ describe("successfully deletes a blog only if user is the blog's creator", () =>
     const firstBlog = getAllBlogs.body[0];
     const firstBlogId = firstBlog.id;
 
-    console.log(getAllBlogs.user);
+    // console.log(getAllBlogs.user);
 
     await api.delete(`/api/blogs/${firstBlogId}`);
 
@@ -177,7 +177,7 @@ describe("successfully deletes a blog only if user is the blog's creator", () =>
     const firstBlog = getAllBlogs.body[0];
     const firstBlogId = firstBlog.id;
 
-    console.log(getAllBlogs.user);
+    // console.log(getAllBlogs.user);
 
     await api
       .delete(`/api/blogs/${firstBlogId}`)

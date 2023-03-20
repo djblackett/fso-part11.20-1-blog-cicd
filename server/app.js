@@ -36,6 +36,16 @@ if (process.env.NODE_ENV === "test") {
   app.use("/api/testing", testingRouter);
 }
 
+app.use(express.static("dist"));
+
+app.get("/api/health", (req, res) => {
+  res.send("ok");
+});
+
+app.get("/api/version", (req, res) => {
+  res.send("1"); // change this string when needed to ensure a new version deployed
+});
+
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
 

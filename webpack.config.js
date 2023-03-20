@@ -29,12 +29,18 @@ module.exports = {
     ],
   },
   devServer: {
-    static: path.resolve(__dirname, 'build'),
-    compress: true,
     port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3003',
+      },
+    },
   },
   devtool: 'source-map',
   plugins: [
-    new HtmlWebPackPlugin(),
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
+      filename: "./index.html",
+    }),
   ],
-};
+}

@@ -2,14 +2,14 @@
 
 describe("Blog app", function() {
   beforeEach(function() {
-    cy.request("POST", "http://localhost:3003/api/testing/reset");
+    cy.request("POST", `${Cypress.env("BACKEND")}/testing/reset`);
     const user = {
       name: "Doctor Testerman",
       username: "testU",
       password: "testP"
     };
-    cy.request("POST", "http://localhost:3003/api/users/", user);
-    cy.visit("http://localhost:3000");
+    cy.request("POST", `${Cypress.env("BACKEND")}/users/`, user);
+    cy.visit("/");
   });
 
 
@@ -100,7 +100,7 @@ describe("Blog app", function() {
         password: "testP2"
       };
 
-      cy.request("POST", "http://localhost:3003/api/users/", user);
+      cy.request("POST", `${Cypress.env("BACKEND")}/users/`, user);
 
       cy.get("#logout-button").click();
 
