@@ -44,12 +44,12 @@ let token2 = "";
 
 beforeEach(async () => {
   mongoose.connect(config.MONGODB_URI)
-      .then(() => {
-        logger.info("connected to MongoDB");
-      })
-      .catch((error) => {
-        logger.error("error connecting to MongoDB:", error.message);
-      });
+    .then(() => {
+      logger.info("connected to MongoDB");
+    })
+    .catch((error) => {
+      logger.error("error connecting to MongoDB:", error.message);
+    });
 
   await Blog.deleteMany({});
   await User.deleteMany({});
